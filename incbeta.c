@@ -29,12 +29,13 @@
 
 #define STOP 1.0e-8
 #define TINY 1.0e-30
+#define NAN (HUGE_VAL * 0.0)
 
 void incbeta(double a, double b, double *p, size_t n)
 {
 	if (a <= 0 || b <= 0)
 	{
-		for (size_t i = 0; i < n; i++) p[i] = 0.0 / 0.0;
+		for (size_t i = 0; i < n; i++) p[i] = NAN;
 		return;
 	}
 
@@ -87,7 +88,7 @@ void incbeta(double a, double b, double *p, size_t n)
 
 				if (j >= 200)
 				{
-					x = 0.0 / 0.0; /*Needed more loops, did not converge.*/
+					x = NAN; /*Needed more loops, did not converge.*/
 					break;
 				}
 			}

@@ -9,8 +9,11 @@ modified to make it easy to call from Dyalog APL.
 
 ```
 $ cmake . -DCMAKE_BUILD_TYPE=Release
-$ make
+$ cmake --build . --config Release
 ```
+
+(Why specify that we want a Release build in two places? See [this
+explanation](https://stackoverflow.com/a/24470998/5747713).)
 
 
 ## Using it from APL
