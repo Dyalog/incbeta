@@ -31,7 +31,13 @@
 #define TINY 1.0e-30
 #define ERRVAL (HUGE_VAL * 0.0) // NaN
 
-void incbeta(double a, double b, double *p, size_t n)
+#if _MSC_VER
+# define DLLEXPORT __declspec(dllexport)
+#else
+# define DLLEXPORT
+#endif
+
+DLLEXPORT void incbeta(double a, double b, double *p, size_t n)
 {
 	if (a <= 0 || b <= 0)
 	{
