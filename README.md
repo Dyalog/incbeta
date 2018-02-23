@@ -7,13 +7,28 @@ modified to make it easy to call from Dyalog APL.
 
 ## Building the shared library
 
+### Windows (32-bit)
+
 ```
-$ cmake . -DCMAKE_BUILD_TYPE=Release
+$ cmake .
 $ cmake --build . --config Release
 ```
 
-(Why specify that we want a Release build in two places? See [this
-explanation](https://stackoverflow.com/a/24470998/5747713).)
+### Windows (64-bit)
+
+Look at the generator that `cmake .` used above, and manually specify the `Win64` variant. For example:
+
+```
+$ cmake . -G "Visual Studio 15 2017 Win64"
+$ cmake --build . --config Release
+```
+
+### Non-Windows
+
+```
+$ cmake . -DCMAKE_BUILD_TYPE=Release
+$ cmake --build .
+```
 
 
 ## Using it from APL
