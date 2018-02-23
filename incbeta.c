@@ -29,13 +29,13 @@
 
 #define STOP 1.0e-8
 #define TINY 1.0e-30
-#define NAN (HUGE_VAL * 0.0)
+#define ERRVAL (HUGE_VAL * 0.0) // NaN
 
 void incbeta(double a, double b, double *p, size_t n)
 {
 	if (a <= 0 || b <= 0)
 	{
-		for (size_t i = 0; i < n; i++) p[i] = NAN;
+		for (size_t i = 0; i < n; i++) p[i] = ERRVAL;
 		return;
 	}
 
@@ -88,7 +88,7 @@ void incbeta(double a, double b, double *p, size_t n)
 
 				if (j >= 200)
 				{
-					x = NAN; /*Needed more loops, did not converge.*/
+					x = ERRVAL; /*Needed more loops, did not converge.*/
 					break;
 				}
 			}
