@@ -6,6 +6,8 @@
  * Copyright (c) 2016, 2017 Lewis Van Winkle
  * http://CodePlea.com
  *
+ * Adapted to make it easier to call from Dyalog APL by Jay Foad.
+ *
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
  * arising from the use of this software.
